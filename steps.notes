@@ -1,0 +1,6 @@
+1. Declare a dp array of n + 1 size
+2. Store the computed values in the array
+3. before calling subproblem, check is this subproblem solved
+means is it exists in the array.
+4. if we find the value in the array we return that value
+5. Else compute and store it and then return
