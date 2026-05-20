@@ -1,0 +1,2 @@
+We tend to store the values of the subproblems, So we dont have to compute again the same thing
+in some map/table
