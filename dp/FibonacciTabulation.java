@@ -1,25 +1,18 @@
-import java.util.Arrays;
-
-public class FibonacciDP {
-    static long[] dp;
-
+public class FibonacciTabulation {
     public static long findFibonacci(int n) {
-        dp = new long[n + 1];
-        Arrays.fill(dp, -1);
-
-        return fibonacci(n);
-    }
-
-    public static long fibonacci(int n) {
         if (n <= 1) {
             return n;
         }
 
-        if (dp[n] != -1) {
-            return dp[n];
-        }
+        int prev2 = 0;
+        int prev1 = 1;
 
-        return dp[n] = fibonacci(n - 1) + fibonacci(n - 2);
+        for(int i = 2 ; i <= n ; i++) {
+            int current = prev2 + prev1;
+            prev2 = prev1;
+            prev1 = current;
+        }
+        return prev1;
     }
 
     public static void main(String[] args) {
@@ -28,4 +21,3 @@ public class FibonacciDP {
         System.out.println("Fibonacci number at position 15 is " + findFibonacci(15));
     }
 }
-
